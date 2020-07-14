@@ -1,5 +1,8 @@
 import { Router, Request, Response } from 'express';
 import { filterImageFromURL, doesFileExist } from '../util/util';
+import { requireAuth } from './auth';
+import { config } from '../config';
+import * as jwt from 'jsonwebtoken';
 
 const router: Router = Router();
 
@@ -12,7 +15,7 @@ router.get("/", async (req: Request, res: Response) => {
 /**
  * GET /filteredimage?image_url={{URL}}
  */
-router.get('/filteredimage', async (req: Request, res: Response) => {
+router.get('/filteredimage', requireAuth, async (req: Request, res: Response) => {
     let { image_url } = req.query;
     // check image url is valid
     if (!image_url) {
