@@ -27,7 +27,7 @@ router.get('/filteredimage', requireAuth, async (req: Request, res: Response) =>
         return res.status(404).send({ message: 'image_url is invalid' });
     } else {
         const filteredpath: string = await filterImageFromURL(image_url);
-        res.sendFile(filteredpath);
+        res.status(200).sendFile(filteredpath);
     }
 });
 

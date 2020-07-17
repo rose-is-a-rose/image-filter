@@ -1,0 +1,4 @@
+* url: http://udagram-zhang-image-filter-app-dev.us-east-2.elasticbeanstalk.com
+* token: eyJhbGciOiJIUzI1NiJ9.cm9zZQ.8cZpb_ocyInqGiLGxi2fOqYZ53Y81DY__Mg-xJQuS0g
+  * session token is also included in the postman_collection file in this repo. 
+  * secret is stored as an environment variable in beanstalk application, running the app locally will not authenticate the url. 
